@@ -1,0 +1,26 @@
+name: Deployment Using One Job
+on:
+  push
+jobs:
+  DoAll:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v5
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.16
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint      
+      - name: Test
+        run: npm run test
+      - name: Build
+        run: npm run Build
+      
+
+      
+
+
