@@ -1,4 +1,4 @@
-name: Deployment Using One Job
+name: Single-Job Deployment
 on:
   push
 jobs:
